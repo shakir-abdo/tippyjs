@@ -7,8 +7,8 @@ export const DIR = './website/snippets/'
 
 export const prerender = (main, tag) => {
   const output = './docs/index.html'
-  if (!isBrowser && typeof __prerenderRequire !== 'undefined') {
-    const fs = __prerenderRequire('fs')
+  if (!isBrowser && typeof nodeRequire !== 'undefined') {
+    const fs = nodeRequire('fs')
     const html = fs.readFileSync(output, 'utf8')
     fs.writeFileSync(output, html.replace(tag, tag + main))
   }
