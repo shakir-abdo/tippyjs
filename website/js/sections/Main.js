@@ -10,7 +10,6 @@ import Objects from './Objects'
 import Methods from './Methods'
 import HTMLContent from './HTMLContent'
 import CreatingCustomThemes from './CreatingCustomThemes'
-import BrowserSupport from './BrowserSupport'
 import Performance from './Performance'
 
 export default () => (
@@ -26,7 +25,6 @@ export default () => (
       <Methods />
       <HTMLContent />
       <CreatingCustomThemes />
-      <BrowserSupport />
       <Performance />
     </div>
   </main>
