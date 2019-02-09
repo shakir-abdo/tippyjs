@@ -95,26 +95,30 @@ effect has been disabled in these examples (`animateFill: false`).
   <Tippy
     animateFill={false}
     duration={[500, 200]}
-    onShow={instance => {
-      instance.popperChildren.tooltip.classList.add('rubberBand', 'animated')
+    onMount={instance => {
+      requestAnimationFrame(() => {
+        instance.popperChildren.tooltip.classList.add('rubberBand', 'animated')
+      })
     }}
-    onHide={instance => {
+    onHidden={instance => {
       instance.popperChildren.tooltip.classList.remove('rubberBand', 'animated')
     }}
-    offset="0, 10"
+    distance={20}
   >
     <Button>Animate.css: rubberBand</Button>
   </Tippy>
   <Tippy
     animateFill={false}
     duration={[500, 200]}
-    onShow={instance => {
-      instance.popperChildren.tooltip.classList.add('tada', 'animated')
+    onMount={instance => {
+      requestAnimationFrame(() => {
+        instance.popperChildren.tooltip.classList.add('tada', 'animated')
+      })
     }}
-    onHide={instance => {
+    onHidden={instance => {
       instance.popperChildren.tooltip.classList.remove('tada', 'animated')
     }}
-    offset="0, 10"
+    distance={20}
   >
     <Button>Animate.css: tada</Button>
   </Tippy>
